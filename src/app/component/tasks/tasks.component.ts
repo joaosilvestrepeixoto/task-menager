@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Tasks} from '../../Tasks'
+import {TASKS} from "../../mock-tasks";
 
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.sass']
 })
-export class TasksComponent {
+export class TasksComponent implements OnInit {
+  tasks: Tasks[] = TASKS;
+
+    constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }
