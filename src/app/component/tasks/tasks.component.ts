@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Tasks} from '../../Tasks'
+import {Component, OnInit, input} from '@angular/core';
+import {Tasks} from '../../Task'
 import {TASKS} from "../../mock-tasks";
 
 @Component({
