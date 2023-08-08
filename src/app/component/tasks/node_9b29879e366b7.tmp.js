@@ -1,2 +1,0 @@
-<p *ngFor="let task of tasks">{{task.text}}</p>
-************************

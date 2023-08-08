@@ -1,5 +1,5 @@
-import {Component, OnInit, input} from '@angular/core';
-import {Tasks} from '../../Task'
+import {Component, OnInit, } from '@angular/core';
+import {Task} from '../../Task'
 import {TASKS} from "../../mock-tasks";
 
 @Component({
@@ -8,9 +8,9 @@ import {TASKS} from "../../mock-tasks";
   styleUrls: ['./tasks.component.sass']
 })
 export class TasksComponent implements OnInit {
-  tasks: Tasks[] = TASKS;
+  tasks: Task[] = TASKS;
 
-    constructor() { }
+  constructor() { }
 
   ngOnInit(): void {
   }
