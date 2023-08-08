@@ -7,9 +7,8 @@ import {Task} from '../../Task'
   templateUrl: './task-item.component.html',
   styleUrls: ['./task-item.component.sass']
 })
-export class TaskItemComponent implements OnInit{
-  @Input() task?: Task;
-
+export class TaskItemComponent implements OnInit {
+  @Input() task: Task = {} as Task;
 
   constructor() {
    
