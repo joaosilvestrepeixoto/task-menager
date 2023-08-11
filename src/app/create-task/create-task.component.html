@@ -1,0 +1,5 @@
+<form [formGroup]="taskForm" (ngSubmit)="createTask()">
+    <input type="text" formControlName="text">
+    <input type="text" formControlName="day">
+    <button type="submit">Salvar</button>
+</form>

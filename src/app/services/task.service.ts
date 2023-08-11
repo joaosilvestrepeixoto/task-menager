@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import {Task} from '../Task'
 import { HttpClient } from '@angular/common/http';
 
@@ -9,13 +8,24 @@ import { HttpClient } from '@angular/common/http';
 export class TaskService {
  private apiUrl = 'http://localhost:3000/tasks';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl);
+  async getTasks(): Promise<Task[]> {
+    return await fetch(this.apiUrl, {method: 'GET'}).then( async response => {
+      return await response.json()
+    })
   }
 
-  deleteTask(taskId: number): void {
-    this.http.delete<Task>(`${this.apiUrl}/${taskId}`);
-  }
+  async deleteTask(taskId: number): Promise<void> {
+    await fetch(`${this.apiUrl}/${taskId}`, {method: 'DELETE'})
+  } 
+  
+  async postTask(task: Task): Promise<void> {
+    console.log(task)
+    await fetch(this.apiUrl, {
+      method: 'POST',
+      body: JSON.stringify(task)
+    })
+  } 
+  
 }

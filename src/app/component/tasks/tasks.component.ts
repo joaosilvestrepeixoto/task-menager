@@ -11,12 +11,16 @@ import {Task} from '../../Task'
 export class TasksComponent implements OnInit {
   tasks: Task[] = [];
 
-  constructor( private taskService: TaskService) { }
+  constructor( 
+    private taskService: TaskService
+    ) {}
 
   ngOnInit(): void {
-      this.taskService.getTasks().subscribe ( response => {
-        this.tasks = response;
-      })
+    this.listTask()
+  }
+
+  async listTask(): Promise<void> {
+    this.tasks = await this.taskService.getTasks()
   }
 
 }
