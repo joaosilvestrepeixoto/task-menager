@@ -10,9 +10,7 @@ import {Task} from '../../Task'
 export class TaskItemComponent implements OnInit {
   @Input() task: Task = {} as Task;
 
-  constructor() {
-   
-   }
+  constructor() {}
 
   ngOnInit(): void {
   }
