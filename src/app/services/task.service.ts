@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import {Task} from '../Task'
 import {TASKS} from "../mock-tasks";
@@ -7,9 +8,9 @@ import {TASKS} from "../mock-tasks";
   providedIn: 'root'
 })
 export class TaskService {
-  private readonly url: string = 'http://localhost:3000/';
+  private spiUrl = 'http://localhost:3000/tasks'
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getTasks(): Observable<Task[]> {
     return of(TASKS); //returning mock data for now.
